@@ -171,7 +171,7 @@ def main(args):
     # cuda
     if all_args.cuda and torch.cuda.is_available():
         print_box("Choose to use gpu...")
-        device = torch.device("cuda:0")
+        device = torch.device("cuda:3")
         torch.set_num_threads(all_args.n_training_threads)
         if all_args.cuda_deterministic:
             torch.backends.cudnn.benchmark = False
