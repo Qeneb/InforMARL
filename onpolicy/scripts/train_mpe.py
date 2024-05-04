@@ -168,7 +168,7 @@ def main(args):
         "Please check the config.py."
     )
 
-    # cuda
+    # cuda3
     if all_args.cuda and torch.cuda.is_available():
         print_box("Choose to use gpu...")
         device = torch.device("cuda:3")
