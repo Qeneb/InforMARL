@@ -281,21 +281,15 @@ class TransformerConvNet(nn.Module):
 
         # x is of shape [batch_size*num_nodes, out_channels]
         # convert to [batch_size, num_nodes, out_channels]
-        # 打印张量
-        print(x)
-
-        # 打印张量的特定属性
-        print(x.shape)  # 打印张量的形状
-        print(x.dtype)  # 打印张量的数据类型
-        print(x.device)  # 打印张量所在的设备（CPU或GPU）
-        # 打印张量
-        print(batch)
-
-        # 打印张量的特定属性
-        print(batch.shape)  # 打印张量的形状
-        print(batch.dtype)  # 打印张量的数据类型
-        print(batch.device)  # 打印张量所在的设备（CPU或GPU）
-
+        # # 打印张量
+        # print(x)
+        #
+        # # 打印张量的特定属性
+        # print(x.shape)  # 打印张量的形状
+        # print(x.dtype)  # 打印张量的数据类型
+        # print(x.device)  # 打印张量所在的设备（CPU或GPU）
+        #
+        batch.type(torch.long)
         x, mask = to_dense_batch(x, batch)
 
         # only pull the node-specific features from output
