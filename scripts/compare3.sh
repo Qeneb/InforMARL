@@ -8,8 +8,8 @@
 #SBATCH -c 40 # cpus per task
 
 # Loading the required module
-source /etc/profile
-module load anaconda/2020a
+#source /etc/profile
+#module load anaconda/2020a
 
 logs_folder="out3"
 mkdir -p $logs_folder
