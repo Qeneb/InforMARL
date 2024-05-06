@@ -12,7 +12,7 @@ import torch
 import os, sys
 
 sys.path.append(os.path.abspath(os.getcwd()))
-
+sys.path.remove('d:\\codes\\mappo')
 from utils.utils import print_args, print_box
 from onpolicy.config import get_config
 from multiagent.MPE_env import MPEEnv, GraphMPEEnv
@@ -158,8 +158,8 @@ def main(args):
     # model_dir = 'trained_models/navigation/Navigation/rmappo/wandb/offline-run-20210720_220614-1eqhk4l1/files'
     parser = get_config()
     all_args = parse_args(args, parser)
-    all_args = modify_args(all_args.model_dir, all_args)
-
+    # all_args = modify_args(all_args.model_dir, all_args)
+    all_args.model_dir = 'D:/codes/InforMARL/models/run1'
     if all_args.algorithm_name == "rmappo" or all_args.algorithm_name == "rmappg":
         assert (
             all_args.use_recurrent_policy or all_args.use_naive_recurrent_policy

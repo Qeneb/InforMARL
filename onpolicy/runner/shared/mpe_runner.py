@@ -381,7 +381,7 @@ class MPERunner(Runner):
                 masks[dones == True] = np.zeros(
                     ((dones == True).sum(), 1), dtype=np.float32
                 )
-
+                get_metrics = False
                 if not get_metrics:
                     if self.all_args.render_eval:
                         if self.all_args.save_gifs:
@@ -413,7 +413,7 @@ class MPERunner(Runner):
 
         if self.all_args.save_gifs:
             imageio.mimsave(
-                str(self.gif_dir) + "/render.gif",
+                str(self.gif_dir) + "/render.mp4",
                 all_frames,
-                duration=self.all_args.ifi,
+                fps=60,#self.all_args.ifi,
             )
